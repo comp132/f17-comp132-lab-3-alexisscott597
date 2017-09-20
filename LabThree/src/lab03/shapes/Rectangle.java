@@ -50,7 +50,6 @@ public class Rectangle implements Drawable, Scaleable{
 
 	@Override
 	public void draw(Graphics g) {
-		
 		g.setColor(theColor);
 		g.drawRect(x, y, width, length);
 		
