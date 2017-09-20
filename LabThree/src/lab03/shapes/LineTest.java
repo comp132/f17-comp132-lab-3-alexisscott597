@@ -31,5 +31,20 @@ public class LineTest {
 		assertEquals("y2 not initialized correctly",4,myLine.gety2());
 		assertSame("Color did not initialze correctly",Color.GREEN,myLine.getColor());
 	}
+	
+	 @Test
+	    public void testSetColor() {
+	        myLine.setColor(Color.BLUE);
+	        assertEquals("setColor() did not correctly set the color", Color.GREEN, myLine.getColor());     
+	    }
+	 
+	 @Test
+	    public void testSetVisible() {
+	        myLine.setVisible(false);
+	        assertFalse("Rectangle was not made invisible", myLine.isVisible());
+	        
+	        myLine.setVisible(true);
+	        assertTrue("Rectangle was not made visible", myLine.isVisible());
+	    }
 
 }
