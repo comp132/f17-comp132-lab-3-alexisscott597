@@ -1,6 +1,7 @@
 package lab03.shapes;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * A DrawableObjectList is a collection of Objects that implement the Drawable
@@ -8,12 +9,25 @@ import java.awt.*;
  * objects to be drawn on the screen. This class also provides methods for
  * drawing or scaling all of the objects.
  */
-public class DrawableObjectList {
+
+public class DrawableObjectList{
+	
+	private ArrayList <Drawable> d1;
+	
 
     /**
      * Construct a new empty DrawableObjectList.
      */
     public DrawableObjectList() {
+    	
+   
+    	d1 = new ArrayList <Drawable>();
+    	
+    }
+    
+    public ArrayList <Drawable> returnList()
+    {
+    	return d1;
     }
 
     /**
@@ -22,7 +36,7 @@ public class DrawableObjectList {
      * @return the size of the list.
      */
     public int getSize() {
-        return -1;
+        return d1.size();
     }
 
     /**
@@ -31,6 +45,7 @@ public class DrawableObjectList {
      * @param obj the Drawable object to be added.
      */
     public void addDrawable(Drawable obj) {
+    	d1.add(obj);
     }
 
     /**
@@ -40,8 +55,16 @@ public class DrawableObjectList {
      * @param obj the Drawable object to remove.
      */
     public void removeDrawable(Drawable obj) {
+    	for(int i=0;i<d1.size();i++)
+    	{
+    		if (d1.get(i) == obj)
+    		{
+    			d1.remove(i);
+    		}
+    	}
     }
-
+    
+   
     /**
      * Draw each of the visible Drawable objects that are contained in this
      * DrawableObjectList onto the specified graphics object. Objects that are
@@ -52,6 +75,14 @@ public class DrawableObjectList {
      * @param g the Graphics object on which to draw the objects.
      */
     public void drawAll(Graphics g) {
+    	
+    	for(int i=0;i<d1.size();i++)
+    	{
+    		if (d1.get(i).isVisible())
+    		{
+    			d1.get(i).draw(g);
+    		}
+    	}
     }
 
     /**
@@ -63,5 +94,17 @@ public class DrawableObjectList {
      * @param factor the factor by which to scale the Scaleable objects.
      */
     public void scaleAll(double factor) {
+    	
+    	for(int i=0;i<d1.size();i++)
+    	{
+    		if (d1.get(i) instanceof Scaleable)
+    		{
+    	
+    				((Scaleable) d1.get(i)).scale(factor);
+    		
+    		}
+    	}
     }
+
+
 }
