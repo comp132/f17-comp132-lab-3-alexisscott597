@@ -7,6 +7,10 @@ public class HouseDrawing {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		/**
+		 * draws a house
+		 */
+		
 		DrawableObjectList d1 = new DrawableObjectList();
 		DrawingTablet tablet = new DrawingTablet("House",200,200,d1);
 		
@@ -23,7 +27,9 @@ public class HouseDrawing {
 		Circle c1 = new Circle(102,185,2,Color.darkGray);
 		d1.addDrawable(c1);
 		
-	
+	/**
+	 * animates house
+	 */
 		
 		tablet.repaint();
 		for(int i=0;i<100;i++)

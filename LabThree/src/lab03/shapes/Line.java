@@ -11,7 +11,9 @@ public class Line implements Drawable {
 	private int y2;
 	private Color theColor;
 	private Boolean isVisible;
-	
+	/*
+	 * creates a line
+	 */
 	public Line (int x1, int x2, int y1, int y2, Color c)
 	{
 		this.x1 = x1;
@@ -43,23 +45,34 @@ public class Line implements Drawable {
 	}
 
 	@Override
+	/*
+	 * draws the line
+	 */
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
 		g.drawLine(x1, y1, x2, y2);
 	}
-
+	/*
+	 * 
+	 * returns the Color
+	 */
 	@Override
 	public Color getColor() {
 		// TODO Auto-generated method stub
 		return theColor;
 	}
-
+	/*
+	 * Sets the color to the specified color
+	 * 
+	 */
 	@Override
 	public void setColor(Color newColor) {
 		theColor = newColor;
 		
 	}
-
+	/*
+	 * Sets the isVisible value to True or False
+	 */
 	@Override
 	public void setVisible(boolean visible) {
 		isVisible = visible;
@@ -71,14 +84,18 @@ public class Line implements Drawable {
 		
 		return isVisible;
 	}
-	
+	/*
+	 * Moves the line to the specified coordinates 
+	 */
 	public void move(int newX1, int newX2, int newY1, int newY2) {
         x1 = newX1;
         x2 = newX2;
         y1 = newY1;
         y2 = newY2;
     }
-  
+  /*
+   * Translates the line by Delta x, Delta Y units 
+   */
 public void translate(int deltaX, int deltaY) {
         x1 = x1 + deltaX;
         x2 = x2 + deltaX;
