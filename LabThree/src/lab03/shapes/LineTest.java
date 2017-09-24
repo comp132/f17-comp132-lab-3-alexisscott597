@@ -35,7 +35,7 @@ public class LineTest {
 	 @Test
 	    public void testSetColor() {
 	        myLine.setColor(Color.BLUE);
-	        assertEquals("setColor() did not correctly set the color", Color.GREEN, myLine.getColor());     
+	        assertSame("setColor() did not correctly set the color", Color.BLUE, myLine.getColor());     
 	    }
 	 
 	 @Test
@@ -46,5 +46,32 @@ public class LineTest {
 	        myLine.setVisible(true);
 	        assertTrue("Rectangle was not made visible", myLine.isVisible());
 	    }
-
+	 @Test
+	 	public void testGetColor()
+	 	{
+		 assertSame("getColor() returns the incorrect color", Color.GREEN, myLine.getColor());
+	 	}
+	 @Test
+	 	public void testMove()
+	 	{
+		 myLine.move(1, 2, 3, 4);
+		 assertEquals("move() produced unexpected value of x1", myLine.getx1(),1);
+		 assertEquals("move() produced unexpected value of x2", myLine.getx2(),2);
+		 assertEquals("move() produced unexpected value of y1", myLine.gety1(),3);
+		 assertEquals("move() produced unexpected value of y2", myLine.gety2(),4);
+		 
+	 	}
+	 @Test
+	 	public void testTranslate()
+	 	{
+		 
+		 myLine.translate(1, 1);
+		
+		 assertEquals("move() produced unexpected value of x1", myLine.getx1(),1);
+		 assertEquals("move() produced unexpected value of x2", myLine.getx2(),1);
+		 assertEquals("move() produced unexpected value of y1", myLine.gety1(),4);
+		 assertEquals("move() produced unexpected value of y2", myLine.gety2(),5);
+	 	}
+	 	
+	
 }

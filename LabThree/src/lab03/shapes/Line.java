@@ -19,6 +19,7 @@ public class Line implements Drawable {
 		this.y1 = y1;
 		this.y2 = y2;
 		theColor = c;
+		isVisible = true;
 	}
 	
 	public int getx1()
@@ -70,6 +71,20 @@ public class Line implements Drawable {
 		
 		return isVisible;
 	}
+	
+	public void move(int newX1, int newX2, int newY1, int newY2) {
+        x1 = newX1;
+        x2 = newX2;
+        y1 = newY1;
+        y2 = newY2;
+    }
+  
+public void translate(int deltaX, int deltaY) {
+        x1 = x1 + deltaX;
+        x2 = x2 + deltaX;
+        y1 = y1 + deltaY;
+        y2 = y2 + deltaY;
+    }
 	
 	
 

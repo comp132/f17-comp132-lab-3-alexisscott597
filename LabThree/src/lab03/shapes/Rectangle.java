@@ -19,6 +19,7 @@ public class Rectangle implements Drawable, Scaleable{
 		this.width = width;
 		this.length = length;
 		theColor = color;
+		isVisible = true;
 		
 	}
 	
@@ -51,7 +52,7 @@ public class Rectangle implements Drawable, Scaleable{
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(theColor);
-		g.drawRect(x, y, width, length);
+		g.fillRect(x, y, width, length);
 		
 	}
 
